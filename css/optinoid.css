@@ -1,0 +1,510 @@
+/*---------------------------------------------------
+    LESS Elements 0.9
+  ---------------------------------------------------
+    A set of useful LESS mixins
+    More info at: http://lesselements.com
+  ---------------------------------------------------*/
+/* @group GRADIENTS */
+/* @end */
+/* @group BORDERS */
+/* @end */
+/* @group SHADOWS */
+/* @end */
+/* @group TRANSFORM */
+/* @end */
+/* @group TRANSITION */
+/* @end */
+/* @group UTILITIES */
+/* @end */
+@-webkit-keyframes rotating {
+  from {
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -webkit-transform-origin: 50% 50%;
+    -moz-transform-origin: 50% 50%;
+    -ms-transform-origin: 50% 50%;
+    -o-transform-origin: 50% 50%;
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    transform: rotate(360deg);
+    -webkit-transform-origin: 50% 50%;
+    -moz-transform-origin: 50% 50%;
+    -ms-transform-origin: 50% 50%;
+    -o-transform-origin: 50% 50%;
+  }
+}
+@keyframes rotating {
+  from {
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -webkit-transform-origin: 50% 50%;
+    -moz-transform-origin: 50% 50%;
+    -ms-transform-origin: 50% 50%;
+    -o-transform-origin: 50% 50%;
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    transform: rotate(360deg);
+    -webkit-transform-origin: 50% 50%;
+    -moz-transform-origin: 50% 50%;
+    -ms-transform-origin: 50% 50%;
+    -o-transform-origin: 50% 50%;
+  }
+}
+/* @group GRID */
+.optinoid-optin * {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.optinoid-optin .row {
+  margin: 0 auto;
+  max-width: 62.5em;
+  width: 100%;
+}
+.optinoid-optin .column,
+.optinoid-optin .columns {
+  padding-left: 0.9375rem;
+  padding-right: 0.9375rem;
+  width: 100%;
+  float: left;
+}
+.optinoid-optin .column + .column:last-child,
+.optinoid-optin .columns + .columns:last-child {
+  float: right;
+}
+.optinoid-optin .column + .column.end,
+.optinoid-optin .columns + .columns.end {
+  float: left;
+}
+.optinoid-optin .medium-1 {
+  width: 8.33333%;
+}
+.optinoid-optin .medium-2 {
+  width: 16.66667%;
+}
+.optinoid-optin .medium-3 {
+  width: 25%;
+}
+.optinoid-optin .medium-4 {
+  width: 33.33333%;
+}
+.optinoid-optin .medium-5 {
+  width: 41.66667%;
+}
+.optinoid-optin .medium-6 {
+  width: 50%;
+}
+.optinoid-optin .medium-7 {
+  width: 58.33333%;
+}
+.optinoid-optin .medium-8 {
+  width: 66.66667%;
+}
+.optinoid-optin .medium-9 {
+  width: 75%;
+}
+.optinoid-optin .medium-10 {
+  width: 83.33333%;
+}
+.optinoid-optin .medium-11 {
+  width: 91.66667%;
+}
+.optinoid-optin .medium-12 {
+  width: 100%;
+}
+/* @end */
+/* @group OPTIN OVERLAY */
+#optinoid-overlay {
+  background: rgba(0, 0, 0, 0.75);
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1000;
+  visibility: hidden;
+  -moz-opacity: 0;
+  -khtml-opacity: 0;
+  -webkit-opacity: 0;
+  opacity: 0;
+  -ms-filter: progid:DXImageTransform.Microsoft.Alpha(opacity=0);
+  filter: alpha(opacity=0);
+}
+#optinoid-overlay.active {
+  visibility: visible;
+  -moz-opacity: 1;
+  -khtml-opacity: 1;
+  -webkit-opacity: 1;
+  opacity: 1;
+  -ms-filter: progid:DXImageTransform.Microsoft.Alpha(opacity=100);
+  filter: alpha(opacity=100);
+  -moz-transition-duration: 0.3s;
+  -webkit-transition-duration: 0.3s;
+  -o-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+}
+#optinoid-overlay.closing {
+  -moz-opacity: 0;
+  -khtml-opacity: 0;
+  -webkit-opacity: 0;
+  opacity: 0;
+  -ms-filter: progid:DXImageTransform.Microsoft.Alpha(opacity=0);
+  filter: alpha(opacity=0);
+  -moz-transition-duration: 0.3s;
+  -webkit-transition-duration: 0.3s;
+  -o-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+}
+.optinoid-optin {
+  position: absolute;
+  left: 50%;
+  top: -100%;
+  background: #FFF;
+  width: 640px;
+  margin-left: -320px;
+}
+.optinoid-optin.active {
+  top: 30px;
+  -moz-transition-duration: 0.5s;
+  -webkit-transition-duration: 0.5s;
+  -o-transition-duration: 0.5s;
+  transition-duration: 0.5s;
+}
+.optinoid-optin.closing {
+  top: -5000px;
+  -moz-transition-duration: 0.2s;
+  -webkit-transition-duration: 0.2s;
+  -o-transition-duration: 0.2s;
+  transition-duration: 0.2s;
+}
+.optinoid-optin.optin-inline {
+  position: relative;
+  left: auto;
+  top: auto;
+  margin-left: inherit;
+  width: 100%;
+  float: left;
+  margin: 1.5em 0;
+}
+.optinoid-optin .close-optin {
+  position: absolute;
+  right: -16px;
+  top: -16px;
+  font-size: 20px;
+  line-height: 30px;
+  display: block;
+  width: 32px;
+  height: 32px;
+  border-radius: 16px;
+  background: #FFF;
+  text-align: center;
+  margin: 0;
+  cursor: pointer;
+  z-index: 100;
+}
+.optinoid-optin .close-optin:hover {
+  background-color: #000;
+  color: #FFF;
+  -moz-transition-duration: 0.2s;
+  -webkit-transition-duration: 0.2s;
+  -o-transition-duration: 0.2s;
+  transition-duration: 0.2s;
+}
+.optinoid-optin form {
+  width: 100%;
+  float: left;
+  margin: 0;
+}
+.optinoid-optin input[type=text],
+.optinoid-optin input[type=email] {
+  padding-left: 0.9375rem;
+  padding-right: 0.9375rem;
+}
+.optinoid-optin input[type=text].has-error,
+.optinoid-optin input[type=email].has-error {
+  border-color: #A00;
+  background-color: #ffdddd;
+}
+.optinoid-optin input[type=text] .placeholder,
+.optinoid-optin input[type=email] .placeholder {
+  color: #999;
+}
+.optinoid-optin input[type=text],
+.optinoid-optin input[type=email],
+.optinoid-optin button,
+.optinoid-optin .button {
+  height: 40px;
+  width: 100%;
+}
+.optinoid-optin button,
+.optinoid-optin .button {
+  padding: 0;
+  text-align: center;
+  line-height: 40px;
+  width: 100%;
+  float: left;
+  font-size: 14px;
+  background-image: linear-gradient(right, #444444 0%, #333333 100%);
+  background-image: -o-linear-gradient(right, #444444 0%, #333333 100%);
+  background-image: -moz-linear-gradient(right, #444444 0%, #333333 100%);
+  background-image: -webkit-linear-gradient(right, #444444 0%, #333333 100%);
+  background-image: -ms-linear-gradient(right, #444444 0%, #333333 100%);
+  background-image: -webkit-gradient(linear, right top, left top, color-stop(0, #444444), color-stop(0.5, #333333));
+  background: -ms-linear-gradient(left, #333333 0%, #444444 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#444444', endColorstr='#333333', GradientType=1);
+  background: #333333;
+  background: -webkit-gradient(linear, left bottom, left top, color-stop(0, #333333), color-stop(1, #444444));
+  background: -ms-linear-gradient(bottom, #333333, #444444);
+  background: -moz-linear-gradient(center bottom, #333333 0%, #444444 100%);
+  background: -ms-linear-gradient(bottom, #333333 0%, #444444 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#444444', endColorstr='#333333', GradientType=0);
+  color: #FFF;
+  border: 0;
+}
+.optinoid-optin button:hover,
+.optinoid-optin .button:hover {
+  background-image: linear-gradient(right, #555555 0%, #444444 100%);
+  background-image: -o-linear-gradient(right, #555555 0%, #444444 100%);
+  background-image: -moz-linear-gradient(right, #555555 0%, #444444 100%);
+  background-image: -webkit-linear-gradient(right, #555555 0%, #444444 100%);
+  background-image: -ms-linear-gradient(right, #555555 0%, #444444 100%);
+  background-image: -webkit-gradient(linear, right top, left top, color-stop(0, #555555), color-stop(0.5, #444444));
+  background: -ms-linear-gradient(left, #444444 0%, #555555 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#555555', endColorstr='#444444', GradientType=1);
+  background: #444444;
+  background: -webkit-gradient(linear, left bottom, left top, color-stop(0, #444444), color-stop(1, #555555));
+  background: -ms-linear-gradient(bottom, #444444, #555555);
+  background: -moz-linear-gradient(center bottom, #444444 0%, #555555 100%);
+  background: -ms-linear-gradient(bottom, #444444 0%, #555555 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#555555', endColorstr='#444444', GradientType=0);
+  -moz-transition-duration: 0.2s;
+  -webkit-transition-duration: 0.2s;
+  -o-transition-duration: 0.2s;
+  transition-duration: 0.2s;
+}
+.optinoid-optin .optinoid-thumb {
+  width: 100%;
+  height: auto;
+  float: left;
+}
+.optinoid-optin .preloader {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  background: rgba(255, 255, 255, 0.9);
+  z-index: 10;
+}
+.optinoid-optin .preloader .circle {
+  width: 40px;
+  height: 40px;
+  border: 5px solid #CCC;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-left: -20px;
+  margin-top: -20px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  border-radius: 20px;
+}
+.optinoid-optin .preloader .circle:after {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-top: -9px;
+  margin-left: -3px;
+  content: "";
+  width: 6px;
+  height: 18px;
+  background: #CCC;
+  -webkit-animation: rotating 2s linear infinite;
+  -moz-animation: rotating 2s linear infinite;
+  -ms-animation: rotating 2s linear infinite;
+}
+.optinoid-optin .preloader .circle:before {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-top: -3px;
+  margin-left: -9px;
+  content: "";
+  width: 18px;
+  height: 6px;
+  background: #CCC;
+  -webkit-animation: rotating 2s linear infinite;
+  -moz-animation: rotating 2s linear infinite;
+  -ms-animation: rotating 2s linear infinite;
+}
+.optin-input-url {
+  display: none;
+}
+/* @end */
+/* @group OPTIN WELCOME */
+#optinoid-welcome {
+  position: absolute;
+  width: 100%;
+  background: #FFF;
+  z-index: 1000;
+  overflow: hidden;
+  left: 0;
+  top: -100%;
+  height: 100%;
+  right: 0;
+}
+#optinoid-welcome.active {
+  top: 0;
+  -moz-transition-duration: 0.5s;
+  -webkit-transition-duration: 0.5s;
+  -o-transition-duration: 0.5s;
+  transition-duration: 0.5s;
+}
+#optinoid-welcome.closing {
+  top: -100%;
+  -moz-transition-duration: 0.5s;
+  -webkit-transition-duration: 0.5s;
+  -o-transition-duration: 0.5s;
+  transition-duration: 0.5s;
+}
+#optinoid-welcome .optinoid-optin {
+  border: 1px solid #DDD;
+}
+#optinoid-welcome .close-optin {
+  border: 1px solid #DDD;
+}
+#optinoid-floating-bar {
+  position: fixed;
+  left: 0;
+  top: -100%;
+  right: 0;
+  height: 60px;
+  background-image: linear-gradient(right, #fafafa 0%, #eeeeee 100%);
+  background-image: -o-linear-gradient(right, #fafafa 0%, #eeeeee 100%);
+  background-image: -moz-linear-gradient(right, #fafafa 0%, #eeeeee 100%);
+  background-image: -webkit-linear-gradient(right, #fafafa 0%, #eeeeee 100%);
+  background-image: -ms-linear-gradient(right, #fafafa 0%, #eeeeee 100%);
+  background-image: -webkit-gradient(linear, right top, left top, color-stop(0, #fafafa), color-stop(0.5, #eeeeee));
+  background: -ms-linear-gradient(left, #eeeeee 0%, #fafafa 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fafafa', endColorstr='#eeeeee', GradientType=1);
+  background: #eeeeee;
+  background: -webkit-gradient(linear, left bottom, left top, color-stop(0, #eeeeee), color-stop(1, #fafafa));
+  background: -ms-linear-gradient(bottom, #eeeeee, #fafafa);
+  background: -moz-linear-gradient(center bottom, #eeeeee 0%, #fafafa 100%);
+  background: -ms-linear-gradient(bottom, #eeeeee 0%, #fafafa 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fafafa', endColorstr='#eeeeee', GradientType=0);
+  border-bottom: 1px solid #E3E3E3;
+  overflow: hidden;
+}
+#optinoid-floating-bar form {
+  padding: 10px 0 0;
+  border: 0;
+  background: none;
+}
+#optinoid-floating-bar.active {
+  top: 0;
+  -moz-transition-duration: 0.2s;
+  -webkit-transition-duration: 0.2s;
+  -o-transition-duration: 0.2s;
+  transition-duration: 0.2s;
+}
+#optinoid-floating-bar .optinoid-optin {
+  position: relative;
+  top: auto;
+  margin-left: auto;
+  width: 960px;
+  margin: 0 auto;
+  left: auto;
+}
+#optinoid-floating-bar .optinoid-optin .close-optin {
+  position: fixed;
+  right: 16px;
+  top: 14px;
+}
+#optinoid-floating-bar.optinoid-stick-bottom {
+  top: auto;
+  bottom: -100%;
+  border-top: 1px solid #E3E3E3;
+  border-bottom: none;
+}
+#optinoid-floating-bar.optinoid-stick-bottom .close-optin {
+  position: fixed;
+  right: 16px;
+  bottom: 14px;
+  top: auto;
+}
+#optinoid-floating-bar.optinoid-stick-bottom.active {
+  bottom: 0;
+  -moz-transition-duration: 0.2s;
+  -webkit-transition-duration: 0.2s;
+  -o-transition-duration: 0.2s;
+  transition-duration: 0.2s;
+}
+/* @end */
+/* @group THEMES */
+.optinoid-optin.content-below-image h2 {
+  font-size: 24px;
+  margin: .5em 0;
+}
+.optinoid-optin.content-below-image .optinoid-container {
+  float: left;
+  width: 100%;
+  padding-top: 0.9375rem;
+  padding-bottom: 0.9375rem;
+}
+.optinoid-optin.content-below-image .optinoid-thumb-container {
+  width: 100%;
+  float: left;
+  overflow: hidden;
+  max-height: 300px;
+}
+.optinoid-optin.content-below-image .optinoid-form {
+  background: #EEE;
+  border-top: 1px solid #DDD;
+  padding-top: 0.9375rem;
+  padding-bottom: 0.9375rem;
+}
+.optinoid-optin.content-over-image {
+  text-align: center;
+}
+.optinoid-optin.content-over-image .optinoid-container {
+  float: left;
+  width: 100%;
+  background-size: cover;
+  padding: 100px 0;
+  background-repeat: no-repeat;
+  background-position: top center;
+}
+.optinoid-optin.content-right .optinoid-container {
+  float: left;
+  width: 100%;
+  padding-top: 0.9375rem;
+  padding-bottom: 0.9375rem;
+}
+.optinoid-optin.content-right .optinoid-form {
+  background: #EEE;
+  border-top: 1px solid #DDD;
+  padding-top: 0.9375rem;
+  padding-bottom: 0.9375rem;
+}
+.optinoid-optin.simple-form .optinoid-form {
+  background: #EEE;
+  border-top: 1px solid #DDD;
+  padding-top: 0.9375rem;
+  padding-bottom: 0.9375rem;
+}
+/* @end */

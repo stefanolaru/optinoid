@@ -1,0 +1,384 @@
+@import 'elements.less';
+
+@-webkit-keyframes rotating {
+	from {
+		.rotation(0deg);
+		.transform-origin(50%, 50%);
+	}
+	to {
+		.rotation(360deg);
+		.transform-origin(50%, 50%);
+	}
+}
+@keyframes rotating {
+	from {
+		.rotation(0deg);
+		.transform-origin(50%, 50%);
+	}
+	to {
+		.rotation(360deg);
+		.transform-origin(50%, 50%);
+	}
+}
+
+/* @group GRID */
+.optinoid-optin {
+	* {
+		-webkit-box-sizing: border-box;
+		-moz-box-sizing: border-box;
+		box-sizing: border-box;
+	}
+	.row {
+		margin: 0 auto;
+		max-width: 62.5em;
+		width: 100%; 
+	 }
+	.column,
+	.columns {
+		padding-left: 0.9375rem;
+		padding-right: 0.9375rem;
+		width: 100%;
+		float: left; 
+	}
+	
+	.column + .column:last-child,
+	.columns + .columns:last-child {
+		float: right; 
+	}
+	
+	.column + .column.end,
+	.columns + .columns.end {
+		float: left; 
+	}
+	
+	.medium-1 {
+	    width: 8.33333%; }
+	
+	  .medium-2 {
+	    width: 16.66667%; }
+	
+	  .medium-3 {
+	    width: 25%; }
+	
+	  .medium-4 {
+	    width: 33.33333%; }
+	
+	  .medium-5 {
+	    width: 41.66667%; }
+	
+	  .medium-6 {
+	    width: 50%; }
+	
+	  .medium-7 {
+	    width: 58.33333%; }
+	
+	  .medium-8 {
+	    width: 66.66667%; }
+	
+	  .medium-9 {
+	    width: 75%; }
+	
+	  .medium-10 {
+	    width: 83.33333%; }
+	
+	  .medium-11 {
+	    width: 91.66667%; }
+	
+	  .medium-12 {
+	    width: 100%; }
+}
+/* @end */
+
+/* @group OPTIN OVERLAY */
+#optinoid-overlay {
+	background: rgba(0,0,0,.75);
+	position: fixed;
+	left: 0;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 1000;
+	visibility: hidden;
+	.opacity(0);
+	&.active {
+		visibility: visible;
+		.opacity(1);
+		.transition-duration(.3s);
+	}
+	&.closing {
+		.opacity(0);
+		.transition-duration(.3s);
+	}
+}
+.optinoid-optin {
+	position: absolute;
+	left: 50%;
+	top: -100%;
+	background: #FFF;
+	width: 640px;
+	margin-left: -320px;
+	&.active {
+		top: 30px;
+		.transition-duration(.5s);
+	}
+	&.closing {
+		top: -5000px;
+		.transition-duration(.2s);
+	}
+	&.optin-inline {
+		position: relative;
+		left: auto;
+		top: auto;
+		margin-left: inherit;
+		width: 100%;
+		float: left;
+		margin: 1.5em 0;
+	}
+	.close-optin {
+		position: absolute;
+		right: -16px;
+		top: -16px;
+		font-size: 20px;
+		line-height: 30px;
+		display: block;
+		width: 32px;
+		height: 32px;
+		border-radius: 16px;
+		background: #FFF;
+		text-align: center;
+		margin: 0;
+		cursor: pointer;
+		z-index: 100;
+		&:hover {
+			background-color: #000;
+			color: #FFF;
+			.transition-duration(.2s);
+		}
+	}
+	form {
+		width: 100%;
+		float: left;
+		margin: 0;
+	}
+	input[type=text], input[type=email] {
+		padding-left: 0.9375rem;
+		padding-right: 0.9375rem;
+		&.has-error {
+			border-color: #A00;
+			background-color: lighten(#A00,60%);
+		}
+		.placeholder {
+			color: #999;
+		}
+	}
+	input[type=text], input[type=email], button, .button {
+		height: 40px;
+		width: 100%;
+	}
+	button, .button {
+		padding: 0;
+		text-align: center;
+		line-height: 40px;
+		width: 100%;
+		float: left;
+		font-size: 14px;
+		.gradient(#333,#333,#444);
+		color: #FFF;
+		border: 0;
+		&:hover {
+			.gradient(#444,#444,#555);
+			.transition-duration(.2s);
+		}
+	}
+	.optinoid-thumb {
+		width: 100%;
+		height: auto;
+		float: left;
+	}
+	.preloader {
+		position: absolute;
+		left: 0;
+		top: 0;
+		bottom: 0;
+		right: 0;
+		background: fadeOut(#FFF,10%);
+		z-index: 10;
+		.circle {
+			.square(40px);
+			border: 5px solid #CCC;
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			margin-left: -20px;
+			margin-top: -20px;
+			.rounded(20px);
+			&:after {
+				position: absolute;
+				left: 50%;
+				top: 50%;
+				margin-top: -9px;
+				margin-left: -3px;
+				content: "";
+				.size(6px, 18px);
+				background: #CCC;
+				.animation(rotating, 2s, linear, infinite);
+			}
+			&:before {
+				position: absolute;
+				left: 50%;
+				top: 50%;
+				margin-top: -3px;
+				margin-left: -9px;
+				content: "";
+				.size(18px, 6px);
+				background: #CCC;
+				.animation(rotating, 2s, linear, infinite);
+			}
+		}
+	}
+}
+.optin-input-url {
+	display: none;
+}
+/* @end */
+
+
+/* @group OPTIN WELCOME */
+#optinoid-welcome {
+	position: absolute;
+	width: 100%;
+	background: #FFF;
+	z-index: 1000;
+	overflow: hidden;
+	left: 0;
+	top: -100%;
+	height: 100%;
+	right: 0;
+	&.active {
+		top: 0;
+		.transition-duration(.5s);
+	}
+	&.closing {
+		top: -100%;
+		.transition-duration(.5s);
+	}
+	.optinoid-optin {
+		border: 1px solid #DDD;
+	}
+	.close-optin {
+		border: 1px solid #DDD;
+	}
+}
+#optinoid-floating-bar {
+	position: fixed;
+	left: 0;
+	top: -100%;
+	right: 0;
+	height: 60px;
+	.gradient(#EEE,#EEE,#FAFAFA);
+	border-bottom: 1px solid #E3E3E3;
+	overflow: hidden;
+	form {
+		padding: 10px 0 0;
+		border: 0;
+		background: none;
+	}
+	&.active {
+		top: 0;
+		.transition-duration(.2s);
+	}
+	.optinoid-optin {
+		position: relative;
+		top: auto;
+		margin-left: auto;
+		width: 960px;
+		margin: 0 auto;
+		left: auto;
+		.close-optin {
+			position: fixed;
+			right: 16px;
+			top: 14px;
+		}
+	}
+	&.optinoid-stick-bottom {
+		top: auto;
+		bottom: -100%;
+		border-top: 1px solid #E3E3E3;
+		border-bottom: none;
+		.close-optin {
+			position: fixed;
+			right: 16px;
+			bottom: 14px;
+			top: auto;
+		}
+		&.active {
+			bottom: 0;
+			.transition-duration(.2s);
+		}
+	}
+}
+/* @end */
+
+/* @group THEMES */
+
+.optinoid-optin {
+	&.content-below-image {
+		h2 {
+			font-size: 24px;
+			margin: .5em 0;
+		}
+		.optinoid-container {
+			float: left;
+			width: 100%;
+			padding-top: 0.9375rem;
+			padding-bottom: 0.9375rem;
+		}
+		.optinoid-thumb-container {
+			width: 100%;
+			float: left;
+			overflow: hidden;
+			max-height: 300px;
+		}
+		.optinoid-form {
+			background: #EEE;
+			border-top: 1px solid #DDD;
+			padding-top: 0.9375rem;
+			padding-bottom: 0.9375rem;
+		}
+		
+	}
+	&.content-over-image {
+		text-align: center;
+		.optinoid-container {
+			float: left;
+			width: 100%;
+			background-size: cover;
+			padding: 100px 0;
+			background-repeat: no-repeat;
+			background-position: top center;
+		}
+	}
+	&.content-right {
+		.optinoid-container {
+			float: left;
+			width: 100%;
+			padding-top: 0.9375rem;
+			padding-bottom: 0.9375rem;
+		}
+		.optinoid-form {
+			background: #EEE;
+			border-top: 1px solid #DDD;
+			padding-top: 0.9375rem;
+			padding-bottom: 0.9375rem;
+		}
+	}
+	&.simple-form {
+		.optinoid-form {
+			background: #EEE;
+			border-top: 1px solid #DDD;
+			padding-top: 0.9375rem;
+			padding-bottom: 0.9375rem;
+		}
+	}
+}
+/* @end */

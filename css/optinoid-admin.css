@@ -1,0 +1,68 @@
+/*---------------------------------------------------
+    LESS Elements 0.9
+  ---------------------------------------------------
+    A set of useful LESS mixins
+    More info at: http://lesselements.com
+  ---------------------------------------------------*/
+/* @group GRADIENTS */
+/* @end */
+/* @group BORDERS */
+/* @end */
+/* @group SHADOWS */
+/* @end */
+/* @group TRANSFORM */
+/* @end */
+/* @group TRANSITION */
+/* @end */
+/* @group UTILITIES */
+/* @end */
+#optinoid-tabs .ui-tabs-nav {
+  width: 100%;
+  float: left;
+  margin: 0 0 10px 0;
+  padding: 0;
+  border-bottom: 1px solid #DDD;
+}
+#optinoid-tabs .ui-tabs-nav li {
+  float: left;
+  display: inline;
+  margin: 0 5px 0 0;
+}
+#optinoid-tabs .ui-tabs-nav li a {
+  float: left;
+  height: 40px;
+  padding: 0 20px;
+  line-height: 40px;
+  text-decoration: none;
+  background: #FAFAFA;
+  border: 1px solid transparent;
+  position: relative;
+  color: #333;
+}
+#optinoid-tabs .ui-tabs-nav li.ui-state-active:focus {
+  outline: none;
+}
+#optinoid-tabs .ui-tabs-nav li.ui-state-active a {
+  border-color: #DDD;
+  background: #FFF;
+  border-bottom-color: #FFF;
+  bottom: -1px;
+  font-weight: bold;
+}
+.optinoid-theme {
+  border: 1px solid #DDD;
+  width: 120px;
+  height: 75px;
+  float: left;
+  overflow: hidden;
+  position: relative;
+  margin: 0 10px 10px 0;
+}
+.optinoid-theme input[type=radio] {
+  position: absolute;
+  left: -999px;
+  top: 0;
+}
+.optinoid-theme.active {
+  border-color: #07A;
+}

@@ -1,0 +1,56 @@
+@import 'elements.less';
+
+#optinoid-tabs {
+	.ui-tabs-nav {
+		width: 100%;
+		float: left;
+		margin: 0 0 10px 0;
+		padding: 0;
+		border-bottom: 1px solid #DDD;
+		li {
+			float: left;
+			display: inline;
+			margin: 0 5px 0 0;
+			a {
+				float: left;
+				height: 40px;
+				padding: 0 20px;
+				line-height: 40px;
+				text-decoration: none;
+				background: #FAFAFA;
+				border: 1px solid transparent;
+				position: relative;
+				color: #333;
+			}
+			&.ui-state-active {
+				&:focus {
+					outline: none;
+				}
+				a {
+					border-color: #DDD;
+					background: #FFF;
+					border-bottom-color: #FFF;
+					bottom: -1px;
+					font-weight: bold;
+				}
+			}
+		}
+	}
+}
+
+.optinoid-theme {
+	border: 1px solid #DDD;
+	.size(120px, 75px);
+	float: left;
+	overflow: hidden;
+	position: relative;
+	margin: 0 10px 10px 0;
+	input[type=radio] {
+		position: absolute;
+		left: -999px;
+		top: 0;
+	}
+	&.active {
+		border-color: #07A;
+	}
+}
