@@ -209,8 +209,10 @@ class Optinoid_Admin {
 						<strong>Load optin globally</strong></p>
 					<p>
 						<?php $optinoid_load_globally = get_post_meta($post->ID, 'optinoid_load_globally', true); ?> 
-						<input type="hidden" name="optinoid_load_globally" value="1" />
-						<label><input type="checkbox" name="optinoid_load_globally" id="load_globally"<?php if(!empty($optinoid_load_globally)) echo ' checked="checked"'; ?> value="1" /> If checked will load optin on all pages of the site</em></label>
+						
+						<input type="hidden" name="optinoid_load_globally" id="optinoid_load_globally" value="<?php echo !empty($optinoid_load_globally)?1:0; ?>" />
+						
+						<label><input type="checkbox"  id="load_globally"<?php if(!empty($optinoid_load_globally)) echo ' checked="checked"'; ?> /> If checked will load optin on all pages of the site</em></label>
 					</p>
 					</td>
 				</tr>

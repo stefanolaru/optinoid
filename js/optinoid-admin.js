@@ -100,8 +100,10 @@ jQuery(document).ready(function($) {
 	
 	jQuery('#load_globally').change(function(){
 		if(!this.checked) {
+			jQuery('#optinoid_load_globally').val(0);
 			jQuery('.optin-not-globally').show();
 		} else {
+			jQuery('#optinoid_load_globally').val(1);
 			jQuery('.optin-not-globally').hide();
 		}
 	});
