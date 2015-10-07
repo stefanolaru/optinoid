@@ -17,7 +17,7 @@
 		<?php 
 			$button_text = get_post_meta($optin->ID, 'optinoid_button_text', true);
 		?>
-		<button type="submit" class="button optinoid-button"><?php echo !empty($button_text)?$button_text:'Subscribe'; ?></button>
+		<button type="submit" class="button optinoid-button<?php if(count($fields) > 1) echo ' has-multiple-fields'; ?>"><?php echo !empty($button_text)?$button_text:'Subscribe'; ?></button>
 			
 		<div class="optin-input-url">
 			<input type="text" name="url" value="" />

@@ -324,7 +324,7 @@
   margin-bottom: 0;
 }
 .optinoid-optin .optinoid-field {
-  width: 79%;
+  width: 69%;
   float: left;
 }
 .optinoid-optin .optinoid-field.has-multiple-fields {
@@ -332,8 +332,11 @@
   margin-right: 1%;
 }
 .optinoid-optin .optinoid-button {
-  width: 19%;
+  width: 29%;
   float: right;
+}
+.optinoid-optin .optinoid-button.has-multiple-fields {
+  width: 19%;
 }
 .optinoid-optin button,
 .optinoid-optin .button {
@@ -681,6 +684,9 @@
   .optinoid-optin .optinoid-button {
     width: 100%;
     float: left;
+  }
+  .optinoid-optin .optinoid-button.has-multiple-fields {
+    width: 100%;
   }
   .optinoid-optin .close-optin {
     right: 6px;
