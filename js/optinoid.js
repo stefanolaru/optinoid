@@ -144,6 +144,12 @@ var Optinoid = {
 						'padding-top': self.win.height()
 					});
 				}
+				
+				// add body padding if floating bar top
+				if(el == '#optinoid-floating-bar' && j(el).hasClass('optinoid-stick-top')) {
+					j('body').addClass('optinoid-fb-padding').css('padding-top', j('#optinoid-floating-bar').outerHeight());
+				}
+				
 			});
 			
 		}
@@ -151,7 +157,7 @@ var Optinoid = {
 		j(this.el).delay(j(this.el).data('delay')).queue(function(){
 			j(this).addClass('active').dequeue();
 			if(el == '#optinoid-welcome') {
-				j(this).append('<div class="optinoid-scroll"></div');
+				j(el).append('<div class="optinoid-scroll"></div');
 			}
 		});
 		

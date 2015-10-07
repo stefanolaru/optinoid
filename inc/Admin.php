@@ -139,7 +139,7 @@ class Optinoid_Admin {
 						</p>
 					</td>
 				</tr>
-				<!--<tr id="optinoid-shortcode" class="hidden">
+				<tr id="optinoid-shortcode" class="hidden">
 					<td style="width: 50%;">
 						<p>
 							<legend style="margin-bottom: 5px;"><strong>Opt-in Shortcode:</strong></legend>
@@ -147,7 +147,7 @@ class Optinoid_Admin {
 						</p>
 					</td>
 					<td>&nbsp;</td>
-				</tr>-->
+				</tr>
 				<tr>
 					<td style="width: 100%;" colspan="2">
 							<legend style="margin-bottom: 5px;"><strong>Opt-in Theme:</strong></legend>

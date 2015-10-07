@@ -97,7 +97,8 @@
 	width: 640px;
 	margin-left: -320px;
 	&.active {
-		top: 30px;
+		top: 50%;
+		.translate(0,-50%);
 		.transition-duration(.5s);
 	}
 	&.closing {
@@ -112,6 +113,7 @@
 		width: 100%;
 		float: left;
 		margin: 1.5em 0;
+		.translate(0,0);
 	}
 	.close-optin {
 		position: absolute;
@@ -269,7 +271,7 @@
 	.optinoid-scroll {
 		width: 0;
 		height: 50px;
-		position: fixed;
+		position: absolute;
 		left: 50%;
 		right: 50%;
 		bottom: 40px;
@@ -433,6 +435,7 @@
 		border: 0;
 		&.active {
 			top: 0;
+			.translate(0,0);
 		}
 		.optinoid-field {
 			width: 100%;

@@ -230,7 +230,12 @@
   margin-left: -320px;
 }
 .optinoid-optin.active {
-  top: 30px;
+  top: 50%;
+  -webkit-transform: translate(0, -50%);
+  -moz-transform: translate(0, -50%);
+  -o-transform: translate(0, -50%);
+  -ms-transform: translate(0, -50%);
+  transform: translate(0, -50%);
   -moz-transition-duration: 0.5s;
   -webkit-transition-duration: 0.5s;
   -o-transition-duration: 0.5s;
@@ -251,6 +256,11 @@
   width: 100%;
   float: left;
   margin: 1.5em 0;
+  -webkit-transform: translate(0, 0);
+  -moz-transform: translate(0, 0);
+  -o-transform: translate(0, 0);
+  -ms-transform: translate(0, 0);
+  transform: translate(0, 0);
 }
 .optinoid-optin .close-optin {
   position: absolute;
@@ -466,7 +476,7 @@
 #optinoid-welcome .optinoid-scroll {
   width: 0;
   height: 50px;
-  position: fixed;
+  position: absolute;
   left: 50%;
   right: 50%;
   bottom: 40px;
@@ -653,6 +663,11 @@
   }
   .optinoid-optin.active {
     top: 0;
+    -webkit-transform: translate(0, 0);
+    -moz-transform: translate(0, 0);
+    -o-transform: translate(0, 0);
+    -ms-transform: translate(0, 0);
+    transform: translate(0, 0);
   }
   .optinoid-optin .optinoid-field {
     width: 100%;
