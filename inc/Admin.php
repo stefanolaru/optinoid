@@ -168,7 +168,11 @@ class Optinoid_Admin {
 							<input type="text" name="optinoid_delay" id="optin_delay" style="width: 75%;" value="<?php echo isset($post_meta)?$post_meta:2000; ?>" />
 						</p>	
 					</td>
-					<td>&nbsp;</td>
+					<td><p>
+						<?php $post_meta = get_post_meta($post->ID, 'optinoid_text_color', true); ?>
+						<label for="optin_text_color"><strong>Optin Text Color</strong> <em>(HEX format, leave empty for default)</em></label><br />
+						<input type="text" name="optinoid_text_color" id="optinoid_text_color" placeholder="#000000" style="width: 75%;" value="<?php echo isset($post_meta)?$post_meta:''; ?>" />
+					</p></td>
 				</tr>
 				<tr class="floating-bar hidden">
 					<td style="width: 50%;">
