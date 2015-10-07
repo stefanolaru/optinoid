@@ -18,7 +18,7 @@ spl_autoload_register( 'Optinoid::autoload' );
 
 class Optinoid {
 	
-	public static $version = '1.1';
+	public static $version = '1.2';
 	public $themes = array();
 	public $output;
 	

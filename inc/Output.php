@@ -147,6 +147,11 @@ class Optinoid_Output {
 		if($optin_type == 'floating-bar') {
 			// override theme
 			$optin_theme = 'floating-bar';
+			$options['hide-close'] = true;
+		}
+		
+		if(in_array($optin_type, array('welcomemat', 'welcomemat-fb'))) {
+			$options['hide-close'] = true;
 		}
 		
 		if(!empty($options['inline'])) {

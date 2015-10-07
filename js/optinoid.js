@@ -38,12 +38,23 @@ var Optinoid = {
 			e.preventDefault();
 		});
 		
+		// click on text on mobile, displays form
+		j('.optinoid-text').click(function(e) {
+			if(!j('form', j(this).parent()).hasClass('active')) {
+				j('form', j(this).parent()).addClass('active');
+			} else {
+				j('form', j(this).parent()).removeClass('active');
+			}
+		});
+		
 		// if welcome mat, listen for scroll top to close
 		if(this.type == 'welcomemat' || this.type == 'welcomemat-fb') {
 			// window scroll
 				this.win.scroll(function(){
-					if(j('#optinoid-welcome').hasClass('active') && self.win.scrollTop() > self.win.height()) {
-						self.close();
+					if(j('#optinoid-welcome').hasClass('active')) {
+						if(self.win.scrollTop() > self.win.height()) {
+							self.close();
+						}
 					}
 				});
 
@@ -113,8 +124,7 @@ var Optinoid = {
 		
 		if(this.type == 'popup') {
 			el = '#optinoid-overlay';
-		}
-		
+		}		
 		
 		if(this.type == 'welcomemat' || this.type == 'welcomemat-fb') {
 			el = '#optinoid-welcome';
@@ -137,10 +147,12 @@ var Optinoid = {
 			});
 			
 		}
-		
 		// open popup and add class active
 		j(this.el).delay(j(this.el).data('delay')).queue(function(){
 			j(this).addClass('active').dequeue();
+			if(el == '#optinoid-welcome') {
+				j(this).append('<div class="optinoid-scroll"></div');
+			}
 		});
 		
 		// update views
@@ -162,7 +174,8 @@ var Optinoid = {
 		// activate floating bar
 		if(j('#optinoid-floating-bar').length) {
 			j('#optinoid-floating-bar').addClass('active');
-			j('body').addClass('optinoid-fb-padding').css('padding-top', j('#optinoid-floating-bar').height());
+			j('body').addClass('optinoid-fb-padding').css('padding-top', j('#optinoid-floating-bar').outerHeight());
+//			window.scrollTo(0,0);
 		}
 		
 		// reset body padding if needed
