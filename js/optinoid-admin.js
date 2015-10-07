@@ -118,7 +118,7 @@ jQuery(document).ready(function($) {
 		source: ajaxurl+'?action=page_search',
 		select: function(event, ui) {
 			if(!jQuery('.optin_pages .page-'+ui.item.id).length) {
-				jQuery('.optin_pages').append('<li class="page-'+ui.item.id+'"><label><input type="checkbox" name="optin_pages[]" value="'+ui.item.id+'" checked="checked" /> '+ui.item.label+'</label></li>');
+				jQuery('.optin_pages').append('<li class="page-'+ui.item.id+'"><label><input type="checkbox" name="optinoid_pages[]" value="'+ui.item.id+'" checked="checked" /> '+ui.item.label+'</label></li>');
 			}
 			jQuery(this).val('');
 			return false;
