@@ -115,6 +115,61 @@
 		margin: 1.5em 0;
 		.translate(0,0);
 	}
+	&.content-over-full, &.content-over-split {
+		width: 100%;
+		margin-left: 0;
+		left: 0;
+		border: none !important;
+		.optinoid-container {
+			position: absolute;
+			left: 0;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			.optinoid-container-inner {
+				position: absolute;
+				top: 50%;
+				width: 640px;
+				left: 50%;
+				margin-left: -320px;
+				text-align: center;
+				.translate(0, -50%);				
+			}
+		}
+		.optinoid-split-left {
+			position: absolute;
+			left: 0;
+			top: 0;
+			bottom: 0;
+			width: 50%;
+		}
+		.optinoid-split-right {
+			position: absolute;
+			right: 0;
+			top: 0;
+			bottom: 0;
+			width: 50%;
+		}
+		&.active {
+			top: 0;
+			bottom: 0;
+			.translate(0,0);
+		}
+		.close-optin {
+			position: fixed;
+			right: 16px;
+			top: 14px;
+		}
+	}
+	&.content-over-split {
+		.optinoid-text, .optinoid-form {
+			position: absolute;
+			left: 0;
+			top: 50%;
+			padding: 40px;
+			.translate(0, -50%);
+		}
+	}
 	.close-optin {
 		position: absolute;
 		right: -16px;
@@ -279,6 +334,9 @@
 		right: 50%;
 		bottom: 40px;
 		.animation(bouncing, 1s, linear, infinite);
+		&.split-screen {
+			left: 75%;
+		}
 		&:before, &:after {
 			content: "";
 			width: 2px;
@@ -381,7 +439,7 @@
 		.optinoid-text {
 			width: 100%;
 			float: left;
-			padding: 0.9375rem;
+			/*padding: 0.9375rem;*/
 			p {
 				&:last-child {
 					margin-bottom: 0;

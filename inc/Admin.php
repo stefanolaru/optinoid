@@ -156,9 +156,25 @@ class Optinoid_Admin {
 							<?php $optinoid_theme = get_post_meta($post->ID, 'optinoid_theme', true); ?>
 							
 							<?php foreach($this->themes as $v): ?>
-							<label class="optinoid-theme<?php if(isset($optinoid_theme) && $optinoid_theme == $v['id']) echo ' active'; ?>"><input type="radio" name="optinoid_theme" value="<?php echo $v['id']; ?>"<?php if(isset($optinoid_theme) && $optinoid_theme == $v['id']) echo ' checked="checked"'; ?> /><img src="<?php echo plugin_dir_url(dirname(__FILE__)).'img/theme-'.$v['id'].'.png'; ?>" alt="<?php echo $v['label']; ?>" /></label> 
+							<label class="optinoid-theme<?php if(isset($optinoid_theme) && $optinoid_theme == $v['id']) echo ' active'; ?>"><input type="radio" name="optinoid_theme" value="<?php echo $v['id']; ?>"<?php if(isset($optinoid_theme) && $optinoid_theme == $v['id']) echo ' checked="checked"'; ?> /><img src="<?php echo plugin_dir_url(dirname(__FILE__)).'img/theme-'.$v['id'].'.png'; ?>" alt="<?php echo $v['label']; ?>" />
+								<span><?php echo $v['label']; ?></span>
+							</label> 
 							<?php endforeach; ?>
 					</td>
+				</tr>
+				<tr>
+					<td style="width: 50%;">
+						<p>
+							<?php $post_meta = get_post_meta($post->ID, 'optinoid_bg_color', true); ?>
+							<label for="optin_bg_color"><strong>Optin Background Color</strong> <em>(HEX format, leave empty for default)</em></label><br />
+							<input type="text" name="optinoid_bg_color" id="optinoid_bg_color" placeholder="#FFF" style="width: 75%;" value="<?php echo isset($post_meta)?$post_meta:''; ?>" />
+						</p>	
+					</td>
+					<td><p>
+						<?php $post_meta = get_post_meta($post->ID, 'optinoid_text_color', true); ?>
+						<label for="optin_text_color"><strong>Optin Text Color</strong> <em>(HEX format, leave empty for default)</em></label><br />
+						<input type="text" name="optinoid_text_color" id="optinoid_text_color" placeholder="#000000" style="width: 75%;" value="<?php echo isset($post_meta)?$post_meta:''; ?>" />
+					</p></td>
 				</tr>
 				<tr>
 					<td style="width: 50%;">
@@ -168,12 +184,9 @@ class Optinoid_Admin {
 							<input type="text" name="optinoid_delay" id="optin_delay" style="width: 75%;" value="<?php echo isset($post_meta)?$post_meta:2000; ?>" />
 						</p>	
 					</td>
-					<td><p>
-						<?php $post_meta = get_post_meta($post->ID, 'optinoid_text_color', true); ?>
-						<label for="optin_text_color"><strong>Optin Text Color</strong> <em>(HEX format, leave empty for default)</em></label><br />
-						<input type="text" name="optinoid_text_color" id="optinoid_text_color" placeholder="#000000" style="width: 75%;" value="<?php echo isset($post_meta)?$post_meta:''; ?>" />
-					</p></td>
+					<td>&nbsp;</td>
 				</tr>
+				
 				<tr class="floating-bar hidden">
 					<td style="width: 50%;">
 						<p>
@@ -316,6 +329,16 @@ class Optinoid_Admin {
 							<?php $optin_success_url = get_post_meta($post->ID, 'optinoid_success_url', true); ?>
 							<label for="optin_success_url"><strong>Success URL</strong> <em>(redirect here after successful submit)</em></label><br />
 							<input type="text" name="optinoid_success_url" id="optinoid_success_url" style="width: 75%;" value="<?php echo isset($optin_success_url)?$optin_success_url:''; ?>" />
+						</p>
+					</td>
+					<td>&nbsp;</td>
+				</tr>
+				<tr>
+					<td width="50%">
+						<p>
+							<?php $optin_form_text = get_post_meta($post->ID, 'optinoid_form_text', true); ?>
+							<label for="optin_form_text"><strong>Form Text</strong> <em>(to be displayed before form)</em></label><br />
+							<input type="text" name="optinoid_form_text" id="optinoid_form_text" style="width: 75%;" value="<?php echo isset($optin_form_text)?$optin_form_text:''; ?>" />
 						</p>
 					</td>
 					<td>&nbsp;</td>

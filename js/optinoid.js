@@ -157,7 +157,11 @@ var Optinoid = {
 		j(this.el).delay(j(this.el).data('delay')).queue(function(){
 			j(this).addClass('active').dequeue();
 			if(el == '#optinoid-welcome') {
-				j(el).append('<div class="optinoid-scroll"></div');
+				if(j(el).children('.content-over-split').length) {
+					j(el).append('<div class="optinoid-scroll split-screen"></div');
+				} else {
+					j(el).append('<div class="optinoid-scroll"></div');
+				}
 			}
 		});
 		

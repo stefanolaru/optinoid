@@ -3,6 +3,9 @@
   ---------------------------------------------------
     A set of useful LESS mixins
     More info at: http://lesselements.com
+    
+
+    
   ---------------------------------------------------*/
 /* @group GRADIENTS */
 /* @end */
@@ -52,16 +55,25 @@
 .optinoid-theme {
   border: 1px solid #DDD;
   width: 120px;
-  height: 75px;
+  height: 100px;
   float: left;
   overflow: hidden;
   position: relative;
   margin: 0 10px 10px 0;
+  text-align: center;
 }
 .optinoid-theme input[type=radio] {
   position: absolute;
   left: -999px;
   top: 0;
+}
+.optinoid-theme span {
+  font-size: 9px;
+  text-transform: uppercase;
+  white-space: nowrap;
+  display: block;
+  border-top: 1px solid #DDD;
+  padding: 2px 0;
 }
 .optinoid-theme.active {
   border-color: #07A;

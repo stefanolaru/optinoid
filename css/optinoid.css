@@ -3,6 +3,9 @@
   ---------------------------------------------------
     A set of useful LESS mixins
     More info at: http://lesselements.com
+    
+
+    
   ---------------------------------------------------*/
 /* @group GRADIENTS */
 /* @end */
@@ -262,6 +265,79 @@
   -ms-transform: translate(0, 0);
   transform: translate(0, 0);
 }
+.optinoid-optin.content-over-full,
+.optinoid-optin.content-over-split {
+  width: 100%;
+  margin-left: 0;
+  left: 0;
+  border: none !important;
+}
+.optinoid-optin.content-over-full .optinoid-container,
+.optinoid-optin.content-over-split .optinoid-container {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+}
+.optinoid-optin.content-over-full .optinoid-container .optinoid-container-inner,
+.optinoid-optin.content-over-split .optinoid-container .optinoid-container-inner {
+  position: absolute;
+  top: 50%;
+  width: 640px;
+  left: 50%;
+  margin-left: -320px;
+  text-align: center;
+  -webkit-transform: translate(0, -50%);
+  -moz-transform: translate(0, -50%);
+  -o-transform: translate(0, -50%);
+  -ms-transform: translate(0, -50%);
+  transform: translate(0, -50%);
+}
+.optinoid-optin.content-over-full .optinoid-split-left,
+.optinoid-optin.content-over-split .optinoid-split-left {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 50%;
+}
+.optinoid-optin.content-over-full .optinoid-split-right,
+.optinoid-optin.content-over-split .optinoid-split-right {
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 50%;
+}
+.optinoid-optin.content-over-full.active,
+.optinoid-optin.content-over-split.active {
+  top: 0;
+  bottom: 0;
+  -webkit-transform: translate(0, 0);
+  -moz-transform: translate(0, 0);
+  -o-transform: translate(0, 0);
+  -ms-transform: translate(0, 0);
+  transform: translate(0, 0);
+}
+.optinoid-optin.content-over-full .close-optin,
+.optinoid-optin.content-over-split .close-optin {
+  position: fixed;
+  right: 16px;
+  top: 14px;
+}
+.optinoid-optin.content-over-split .optinoid-text,
+.optinoid-optin.content-over-split .optinoid-form {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  padding: 40px;
+  -webkit-transform: translate(0, -50%);
+  -moz-transform: translate(0, -50%);
+  -o-transform: translate(0, -50%);
+  -ms-transform: translate(0, -50%);
+  transform: translate(0, -50%);
+}
 .optinoid-optin .close-optin {
   position: absolute;
   right: -16px;
@@ -344,20 +420,20 @@
   text-align: center;
   line-height: 40px;
   font-size: 14px;
-  background-image: linear-gradient(right, #444444 0%, #333333 100%);
-  background-image: -o-linear-gradient(right, #444444 0%, #333333 100%);
-  background-image: -moz-linear-gradient(right, #444444 0%, #333333 100%);
-  background-image: -webkit-linear-gradient(right, #444444 0%, #333333 100%);
-  background-image: -ms-linear-gradient(right, #444444 0%, #333333 100%);
-  background-image: -webkit-gradient(linear, right top, left top, color-stop(0, #444444), color-stop(0.5, #333333));
-  background: -ms-linear-gradient(left, #333333 0%, #444444 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#444444', endColorstr='#333333', GradientType=1);
-  background: #333333;
-  background: -webkit-gradient(linear, left bottom, left top, color-stop(0, #333333), color-stop(1, #444444));
-  background: -ms-linear-gradient(bottom, #333333, #444444);
-  background: -moz-linear-gradient(center bottom, #333333 0%, #444444 100%);
-  background: -ms-linear-gradient(bottom, #333333 0%, #444444 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#444444', endColorstr='#333333', GradientType=0);
+  background-image: linear-gradient(right, #444 0%, #333 100%);
+  background-image: -o-linear-gradient(right, #444 0%, #333 100%);
+  background-image: -moz-linear-gradient(right, #444 0%, #333 100%);
+  background-image: -webkit-linear-gradient(right, #444 0%, #333 100%);
+  background-image: -ms-linear-gradient(right, #444 0%, #333 100%);
+  background-image: -webkit-gradient(linear, right top, left top, color-stop(0, #444), color-stop(0.5, #333));
+  background: -ms-linear-gradient(left, #333 0%, #444 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#444', endColorstr='#333', GradientType=1);
+  background: #333;
+  background: -webkit-gradient(linear, left bottom, left top, color-stop(0, #333), color-stop(1, #444));
+  background: -ms-linear-gradient(bottom, #333, #444);
+  background: -moz-linear-gradient(center bottom, #333 0%, #444 100%);
+  background: -ms-linear-gradient(bottom, #333 0%, #444 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#444', endColorstr='#333', GradientType=0);
   color: #FFF;
   border: 0;
   -webkit-border-radius: 3px;
@@ -366,20 +442,20 @@
 }
 .optinoid-optin button:hover,
 .optinoid-optin .button:hover {
-  background-image: linear-gradient(right, #555555 0%, #444444 100%);
-  background-image: -o-linear-gradient(right, #555555 0%, #444444 100%);
-  background-image: -moz-linear-gradient(right, #555555 0%, #444444 100%);
-  background-image: -webkit-linear-gradient(right, #555555 0%, #444444 100%);
-  background-image: -ms-linear-gradient(right, #555555 0%, #444444 100%);
-  background-image: -webkit-gradient(linear, right top, left top, color-stop(0, #555555), color-stop(0.5, #444444));
-  background: -ms-linear-gradient(left, #444444 0%, #555555 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#555555', endColorstr='#444444', GradientType=1);
-  background: #444444;
-  background: -webkit-gradient(linear, left bottom, left top, color-stop(0, #444444), color-stop(1, #555555));
-  background: -ms-linear-gradient(bottom, #444444, #555555);
-  background: -moz-linear-gradient(center bottom, #444444 0%, #555555 100%);
-  background: -ms-linear-gradient(bottom, #444444 0%, #555555 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#555555', endColorstr='#444444', GradientType=0);
+  background-image: linear-gradient(right, #555 0%, #444 100%);
+  background-image: -o-linear-gradient(right, #555 0%, #444 100%);
+  background-image: -moz-linear-gradient(right, #555 0%, #444 100%);
+  background-image: -webkit-linear-gradient(right, #555 0%, #444 100%);
+  background-image: -ms-linear-gradient(right, #555 0%, #444 100%);
+  background-image: -webkit-gradient(linear, right top, left top, color-stop(0, #555), color-stop(0.5, #444));
+  background: -ms-linear-gradient(left, #444 0%, #555 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#555', endColorstr='#444', GradientType=1);
+  background: #444;
+  background: -webkit-gradient(linear, left bottom, left top, color-stop(0, #444), color-stop(1, #555));
+  background: -ms-linear-gradient(bottom, #444, #555);
+  background: -moz-linear-gradient(center bottom, #444 0%, #555 100%);
+  background: -ms-linear-gradient(bottom, #444 0%, #555 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#555', endColorstr='#444', GradientType=0);
   -moz-transition-duration: 0.2s;
   -webkit-transition-duration: 0.2s;
   -o-transition-duration: 0.2s;
@@ -487,6 +563,9 @@
   -moz-animation: bouncing 1s linear infinite;
   -ms-animation: bouncing 1s linear infinite;
 }
+#optinoid-welcome .optinoid-scroll.split-screen {
+  left: 75%;
+}
 #optinoid-welcome .optinoid-scroll:before,
 #optinoid-welcome .optinoid-scroll:after {
   content: "";
@@ -528,20 +607,20 @@
   left: 0;
   top: -100%;
   right: 0;
-  background-image: linear-gradient(right, #fafafa 0%, #eeeeee 100%);
-  background-image: -o-linear-gradient(right, #fafafa 0%, #eeeeee 100%);
-  background-image: -moz-linear-gradient(right, #fafafa 0%, #eeeeee 100%);
-  background-image: -webkit-linear-gradient(right, #fafafa 0%, #eeeeee 100%);
-  background-image: -ms-linear-gradient(right, #fafafa 0%, #eeeeee 100%);
-  background-image: -webkit-gradient(linear, right top, left top, color-stop(0, #fafafa), color-stop(0.5, #eeeeee));
-  background: -ms-linear-gradient(left, #eeeeee 0%, #fafafa 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fafafa', endColorstr='#eeeeee', GradientType=1);
-  background: #eeeeee;
-  background: -webkit-gradient(linear, left bottom, left top, color-stop(0, #eeeeee), color-stop(1, #fafafa));
-  background: -ms-linear-gradient(bottom, #eeeeee, #fafafa);
-  background: -moz-linear-gradient(center bottom, #eeeeee 0%, #fafafa 100%);
-  background: -ms-linear-gradient(bottom, #eeeeee 0%, #fafafa 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fafafa', endColorstr='#eeeeee', GradientType=0);
+  background-image: linear-gradient(right, #FAFAFA 0%, #EEE 100%);
+  background-image: -o-linear-gradient(right, #FAFAFA 0%, #EEE 100%);
+  background-image: -moz-linear-gradient(right, #FAFAFA 0%, #EEE 100%);
+  background-image: -webkit-linear-gradient(right, #FAFAFA 0%, #EEE 100%);
+  background-image: -ms-linear-gradient(right, #FAFAFA 0%, #EEE 100%);
+  background-image: -webkit-gradient(linear, right top, left top, color-stop(0, #FAFAFA), color-stop(0.5, #EEE));
+  background: -ms-linear-gradient(left, #EEE 0%, #FAFAFA 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FAFAFA', endColorstr='#EEE', GradientType=1);
+  background: #EEE;
+  background: -webkit-gradient(linear, left bottom, left top, color-stop(0, #EEE), color-stop(1, #FAFAFA));
+  background: -ms-linear-gradient(bottom, #EEE, #FAFAFA);
+  background: -moz-linear-gradient(center bottom, #EEE 0%, #FAFAFA 100%);
+  background: -ms-linear-gradient(bottom, #EEE 0%, #FAFAFA 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FAFAFA', endColorstr='#EEE', GradientType=0);
   border-bottom: 1px solid #E3E3E3;
   overflow: hidden;
   padding: 10px 0;
@@ -619,7 +698,7 @@
 .optinoid-optin.content-below-image .optinoid-text {
   width: 100%;
   float: left;
-  padding: 0.9375rem;
+  /*padding: 0.9375rem;*/
 }
 .optinoid-optin.content-below-image .optinoid-text p:last-child {
   margin-bottom: 0;

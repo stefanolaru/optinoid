@@ -64,6 +64,8 @@ class Optinoid {
 		$this->themes = array(
 			array('id' => 'content-below-image', 'label' => 'Content Below Image'), 
 			array('id' => 'content-over-image', 'label' => 'Content Over Image'), 
+			array('id' => 'content-over-full', 'label' => 'Full Screen'),
+			array('id' => 'content-over-split', 'label' => 'Full Screen Split'), 
 			array('id' => 'content-right', 'label' => 'Content on RHS'),
 			array('id' => 'simple-form', 'label' => 'Simple Form')
 		);

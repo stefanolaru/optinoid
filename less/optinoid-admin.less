@@ -40,15 +40,24 @@
 
 .optinoid-theme {
 	border: 1px solid #DDD;
-	.size(120px, 75px);
+	.size(120px, 100px);
 	float: left;
 	overflow: hidden;
 	position: relative;
 	margin: 0 10px 10px 0;
+	text-align: center;
 	input[type=radio] {
 		position: absolute;
 		left: -999px;
 		top: 0;
+	}
+	span {
+		font-size: 9px;
+		text-transform: uppercase;
+		white-space: nowrap;
+		display: block;
+		border-top: 1px solid #DDD;
+		padding: 2px 0;
 	}
 	&.active {
 		border-color: #07A;

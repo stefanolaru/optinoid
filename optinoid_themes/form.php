@@ -1,4 +1,10 @@
 <form method="post" class="optinoid-form">
+	<?php $form_text = get_post_meta($optin->ID, 'optinoid_form_text', true); ?>
+	<?php if(!empty($form_text)): ?>
+	<div class="optinoid-form-text">
+		<?php echo $form_text; ?>
+	</div>
+	<?php endif; ?>
 	<div class="optinoid-form-inner">
 		<?php
 			$fields = get_post_meta($optin->ID, 'optinoid_fields', true);
