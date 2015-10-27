@@ -1,3 +1,5 @@
+/* @codekit-prepend "vendor/js.cookie.js" */
+
 var j = jQuery.noConflict();
 
 var Optinoid = {
@@ -5,8 +7,12 @@ var Optinoid = {
 	el: null,
 	type: 'popup',
 	win: null,
+	cookies: [],
 	init: function() {
 		var self = this;
+		
+		// check cookies
+		this.cookies = Cookies.getJSON('optinoid-closed-optins');
 		
 		// check if is mobile or not
 		if (window.matchMedia("(max-width: 768px)").matches) {
@@ -17,6 +23,7 @@ var Optinoid = {
 		
 		// get optins
 		this.getOptins();
+		
 		
 	},
 	events: function() {
@@ -66,24 +73,42 @@ var Optinoid = {
 				
 	},
 	getOptins: function() {
+		
+		//
+		var self = this;
+		
 		// optins class
 		var optin_class = this.isMobile?'mobile':'desktop';
 		
 		if(j('.optinoid-optin.'+optin_class).length) {
 			
-			// populate this.el
-			this.el = j('.optinoid-optin.'+optin_class).first();
+			// loop through elements and open first that is not cookied
+			j('.optinoid-optin.'+optin_class).each(function(){
+				
+				// populate this.el
+				self.el = j(this);
+				
+				self.type = j(self.el).data('type');
+				
+				var id = j(self.el).data('id');
+				
+				if(j.inArray(id, self.cookies) === -1) {
+				
+					// form submit
+					self.formSubmit();
+					
+					// events
+					self.events();
+					
+					// open popup
+					self.open();
+					
+					return false;
+				}
+				
+			});
 			
-			this.type = j(this.el).data('type');
-			
-			// form submit
-			this.formSubmit();
-			
-			// events
-			this.events();
-			
-			// open popup
-			this.open();			
+						
 		}	
 	},
 	formSubmit: function() {
