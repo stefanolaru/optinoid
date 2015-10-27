@@ -14,15 +14,29 @@ var Optinoid = {
 		// check cookies
 		this.cookies = Cookies.getJSON('optinoid-closed-optins');
 		
+		this.win = j(window);
+		
 		// check if is mobile or not
 		if (window.matchMedia("(max-width: 768px)").matches) {
 			this.isMobile = true;
 		}
 		
-		this.win = j(window);
-		
-		// get optins
-		this.getOptins();
+		// get all optins except inline ones
+		jQuery.post(optinoid.api_url, {
+			id: optinoid.id, 
+			action: 'load_optinoid', 
+			security: optinoid.nonce,
+			mobile: this.isMobile,
+			inline: false,
+			closed: typeof(this.cookies)!=='undefined'?this.cookies:null
+		}, function(response) {
+			
+			// replace placeholder
+			j('#optinoid-placeholder').replaceWith(response);
+			
+			// open optins
+			self.getOptins();
+		});
 		
 		
 	},

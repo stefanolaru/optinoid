@@ -111,7 +111,7 @@ class Optinoid_Admin {
 									array('name' => 'welcomemat', 'label' => 'Welcome Mat'),
 									array('name' => 'welcomemat-fb', 'label' => 'Welcome Mat with Floating Bar'),
 									array('name' => 'floating-bar', 'label' => 'Floating Bar'),
-									array('name' => 'inline', 'label' => 'Inline (shortcode)')
+//									array('name' => 'inline', 'label' => 'Inline (shortcode)')
 								);
 								$post_meta = get_post_meta($post->ID, 'optinoid_type', true);
 							?>
@@ -166,13 +166,13 @@ class Optinoid_Admin {
 					<td style="width: 50%;">
 						<p>
 							<?php $post_meta = get_post_meta($post->ID, 'optinoid_bg_color', true); ?>
-							<label for="optin_bg_color"><strong>Optin Background Color</strong> <em>(HEX format, leave empty for default)</em></label><br />
+							<label for="optin_bg_color"><strong>Optin Background Color</strong> <em>(HEX format)</em></label><br />
 							<input type="text" name="optinoid_bg_color" id="optinoid_bg_color" placeholder="#FFF" style="width: 75%;" value="<?php echo isset($post_meta)?$post_meta:''; ?>" />
 						</p>	
 					</td>
 					<td><p>
 						<?php $post_meta = get_post_meta($post->ID, 'optinoid_text_color', true); ?>
-						<label for="optin_text_color"><strong>Optin Text Color</strong> <em>(HEX format, leave empty for default)</em></label><br />
+						<label for="optin_text_color"><strong>Optin Text Color</strong> <em>(HEX format)</em></label><br />
 						<input type="text" name="optinoid_text_color" id="optinoid_text_color" placeholder="#000000" style="width: 75%;" value="<?php echo isset($post_meta)?$post_meta:''; ?>" />
 					</p></td>
 				</tr>
