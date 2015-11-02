@@ -216,6 +216,7 @@ var Optinoid = {
 			}
 			if(style.textColor != '') {
 				j('.optinoid-text', this).css('color', style.textColor);
+				j('.optinoid-text', this).find('*').css('color', style.textColor);
 			}
 			
 			// welcome scroll
