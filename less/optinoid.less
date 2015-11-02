@@ -211,7 +211,6 @@
 	input[type=text], input[type=email] {
 		padding-left: 0.9375rem;
 		padding-right: 0.9375rem;
-		.rounded(3px);
 		border: 1px solid #DDD;
 		&.has-error {
 			border-color: #A00;
@@ -243,14 +242,15 @@
 	button, .button {
 		padding: 0  0.9375rem;
 		text-align: center;
-		line-height: 40px;
+		line-height: 38px;
 		font-size: 14px;
-		.gradient(#333,#333,#444);
+		background: #333;
+		border: 1px solid #FFF;
+		text-transform: uppercase;
 		color: #FFF;
-		border: 0;
-		.rounded(3px);
+		font-weight: 700;
 		&:hover {
-			.gradient(#444,#444,#555);
+			background-color: darken(#333, 15%)!important;
 			.transition-duration(.2s);
 		}
 	}
@@ -333,17 +333,18 @@
 		border: 1px solid #DDD;
 	}
 	.optinoid-scroll {
-		width: 0;
+		width: 30px;
 		height: 50px;
 		position: absolute;
 		left: 50%;
 		right: 50%;
 		bottom: 40px;
+		cursor: pointer;
 		.animation(bouncing, 1s, linear, infinite);
 		&.split-screen {
 			left: 75%;
 		}
-		&:before, &:after {
+		i {
 			content: "";
 			width: 2px;
 			height: 20px;
@@ -351,17 +352,24 @@
 			position: absolute;
 			background: #666;
 			.rounded(5px);
+			&:first-child {
+				.rotation(-45deg);
+				.transform-origin(0,100%);
+				left: 50%;
+			}
+			&:last-child {
+				right: 50%;
+				.rotation(45deg);
+				.transform-origin(100%,100%);
+			}
 		}
-		&:before {
-			.rotation(-45deg);
-			.transform-origin(0,100%);
-			left: 0;
+		&:hover {
+			-webkit-animation-play-state: paused;
+			-moz-animation-play-state: paused;
+			-o-animation-play-state: paused;
+			animation-play-state: paused;
 		}
-		&:after {
-			right: 0;
-			.rotation(45deg);
-			.transform-origin(100%,100%);
-		}
+
 	}
 }
 #optinoid-floating-bar {

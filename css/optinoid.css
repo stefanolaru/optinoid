@@ -384,9 +384,6 @@
 .optinoid-optin input[type=email] {
   padding-left: 0.9375rem;
   padding-right: 0.9375rem;
-  -webkit-border-radius: 3px;
-  -moz-border-radius: 3px;
-  border-radius: 3px;
   border: 1px solid #DDD;
 }
 .optinoid-optin input[type=text].has-error,
@@ -424,44 +421,17 @@
 .optinoid-optin .button {
   padding: 0  0.9375rem;
   text-align: center;
-  line-height: 40px;
+  line-height: 38px;
   font-size: 14px;
-  background-image: linear-gradient(right, #444 0%, #333 100%);
-  background-image: -o-linear-gradient(right, #444 0%, #333 100%);
-  background-image: -moz-linear-gradient(right, #444 0%, #333 100%);
-  background-image: -webkit-linear-gradient(right, #444 0%, #333 100%);
-  background-image: -ms-linear-gradient(right, #444 0%, #333 100%);
-  background-image: -webkit-gradient(linear, right top, left top, color-stop(0, #444), color-stop(0.5, #333));
-  background: -ms-linear-gradient(left, #333 0%, #444 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#444', endColorstr='#333', GradientType=1);
   background: #333;
-  background: -webkit-gradient(linear, left bottom, left top, color-stop(0, #333), color-stop(1, #444));
-  background: -ms-linear-gradient(bottom, #333, #444);
-  background: -moz-linear-gradient(center bottom, #333 0%, #444 100%);
-  background: -ms-linear-gradient(bottom, #333 0%, #444 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#444', endColorstr='#333', GradientType=0);
+  border: 1px solid #FFF;
+  text-transform: uppercase;
   color: #FFF;
-  border: 0;
-  -webkit-border-radius: 3px;
-  -moz-border-radius: 3px;
-  border-radius: 3px;
+  font-weight: 700;
 }
 .optinoid-optin button:hover,
 .optinoid-optin .button:hover {
-  background-image: linear-gradient(right, #555 0%, #444 100%);
-  background-image: -o-linear-gradient(right, #555 0%, #444 100%);
-  background-image: -moz-linear-gradient(right, #555 0%, #444 100%);
-  background-image: -webkit-linear-gradient(right, #555 0%, #444 100%);
-  background-image: -ms-linear-gradient(right, #555 0%, #444 100%);
-  background-image: -webkit-gradient(linear, right top, left top, color-stop(0, #555), color-stop(0.5, #444));
-  background: -ms-linear-gradient(left, #444 0%, #555 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#555', endColorstr='#444', GradientType=1);
-  background: #444;
-  background: -webkit-gradient(linear, left bottom, left top, color-stop(0, #444), color-stop(1, #555));
-  background: -ms-linear-gradient(bottom, #444, #555);
-  background: -moz-linear-gradient(center bottom, #444 0%, #555 100%);
-  background: -ms-linear-gradient(bottom, #444 0%, #555 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#555', endColorstr='#444', GradientType=0);
+  background-color: #0d0d0d !important;
   -moz-transition-duration: 0.2s;
   -webkit-transition-duration: 0.2s;
   -o-transition-duration: 0.2s;
@@ -559,12 +529,13 @@
   border: 1px solid #DDD;
 }
 #optinoid-welcome .optinoid-scroll {
-  width: 0;
+  width: 30px;
   height: 50px;
   position: absolute;
   left: 50%;
   right: 50%;
   bottom: 40px;
+  cursor: pointer;
   -webkit-animation: bouncing 1s linear infinite;
   -moz-animation: bouncing 1s linear infinite;
   -ms-animation: bouncing 1s linear infinite;
@@ -572,8 +543,7 @@
 #optinoid-welcome .optinoid-scroll.split-screen {
   left: 75%;
 }
-#optinoid-welcome .optinoid-scroll:before,
-#optinoid-welcome .optinoid-scroll:after {
+#optinoid-welcome .optinoid-scroll i {
   content: "";
   width: 2px;
   height: 20px;
@@ -584,7 +554,7 @@
   -moz-border-radius: 5px;
   border-radius: 5px;
 }
-#optinoid-welcome .optinoid-scroll:before {
+#optinoid-welcome .optinoid-scroll i:first-child {
   -webkit-transform: rotate(-45deg);
   -moz-transform: rotate(-45deg);
   -o-transform: rotate(-45deg);
@@ -594,10 +564,10 @@
   -moz-transform-origin: 0 100%;
   -ms-transform-origin: 0 100%;
   -o-transform-origin: 0 100%;
-  left: 0;
+  left: 50%;
 }
-#optinoid-welcome .optinoid-scroll:after {
-  right: 0;
+#optinoid-welcome .optinoid-scroll i:last-child {
+  right: 50%;
   -webkit-transform: rotate(45deg);
   -moz-transform: rotate(45deg);
   -o-transform: rotate(45deg);
@@ -607,6 +577,12 @@
   -moz-transform-origin: 100% 100%;
   -ms-transform-origin: 100% 100%;
   -o-transform-origin: 100% 100%;
+}
+#optinoid-welcome .optinoid-scroll:hover {
+  -webkit-animation-play-state: paused;
+  -moz-animation-play-state: paused;
+  -o-animation-play-state: paused;
+  animation-play-state: paused;
 }
 #optinoid-floating-bar {
   position: fixed;

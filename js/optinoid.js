@@ -44,7 +44,13 @@ var Optinoid = {
 		var self = this;
 		
 		// click on close optin
-		j('.optinoid-optin .close-optin').click(function(e) {
+		j(document).on('click', '.close-optin', function(e) {
+			self.close(true);
+			e.preventDefault();
+		});
+		
+		// click on close optin
+		j(document).on('click', '.optinoid-scroll', function(e) {
 			self.close(true);
 			e.preventDefault();
 		});
@@ -195,12 +201,34 @@ var Optinoid = {
 		// open popup and add class active
 		j(this.el).delay(j(this.el).data('delay')).queue(function(){
 			j(this).addClass('active').dequeue();
+			
+			// add styling
+			var style = j(this).data();
+			
+			if(style.btnColor != '') {
+				j('.optinoid-button', this).css('background', style.btnColor);
+			}
+			if(style.btnTextColor != '') {
+				j('.optinoid-button', this).css('color', style.btnTextColor);
+			}
+			if(style.bgColor != '') {
+				j('.optinoid-container', this).css('background-color', style.bgColor);
+			}
+			if(style.textColor != '') {
+				j('.optinoid-text', this).css('color', style.textColor);
+			}
+			
+			// welcome scroll
 			if(el == '#optinoid-welcome') {
 				if(j(el).children('.content-over-split').length) {
-					j(el).append('<div class="optinoid-scroll split-screen"></div');
+					j(el).append('<div class="optinoid-scroll split-screen"><i></i><i></i></div');
 				} else {
-					j(el).append('<div class="optinoid-scroll"></div');
+					j(el).append('<div class="optinoid-scroll"><i></i><i></i></div');
 				}
+			}
+			
+			if(style.arrowColor != '') {
+				j('.optinoid-scroll > i', j(el)).css('background', style.arrowColor);
 			}
 		});
 		

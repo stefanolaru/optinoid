@@ -166,15 +166,39 @@ class Optinoid_Admin {
 					<td style="width: 50%;">
 						<p>
 							<?php $post_meta = get_post_meta($post->ID, 'optinoid_bg_color', true); ?>
-							<label for="optin_bg_color"><strong>Optin Background Color</strong> <em>(HEX format)</em></label><br />
+							<label for="optin_bg_color"><strong>Background Color</strong> <em>(HEX format)</em></label><br />
 							<input type="text" name="optinoid_bg_color" id="optinoid_bg_color" placeholder="#FFF" style="width: 75%;" value="<?php echo isset($post_meta)?$post_meta:''; ?>" />
 						</p>	
 					</td>
 					<td><p>
 						<?php $post_meta = get_post_meta($post->ID, 'optinoid_text_color', true); ?>
-						<label for="optin_text_color"><strong>Optin Text Color</strong> <em>(HEX format)</em></label><br />
+						<label for="optin_text_color"><strong>Text Color</strong> <em>(HEX format)</em></label><br />
 						<input type="text" name="optinoid_text_color" id="optinoid_text_color" placeholder="#000000" style="width: 75%;" value="<?php echo isset($post_meta)?$post_meta:''; ?>" />
 					</p></td>
+				</tr>
+				<tr>
+					<td style="width: 50%;">
+						<p>
+							<?php $post_meta = get_post_meta($post->ID, 'optinoid_button_color', true); ?>
+							<label for="optin_button_color"><strong>Button Color</strong> <em>(HEX format)</em></label><br />
+							<input type="text" name="optinoid_button_color" id="optinoid_button_color" placeholder="#000" style="width: 75%;" value="<?php echo isset($post_meta)?$post_meta:''; ?>" />
+						</p>	
+					</td>
+					<td><p>
+						<?php $post_meta = get_post_meta($post->ID, 'optinoid_button_text_color', true); ?>
+						<label for="optin_button_text_color"><strong>Button Text Color</strong> <em>(HEX format)</em></label><br />
+						<input type="text" name="optinoid_button_text_color" id="optinoid_button_text_color" placeholder="#FFF" style="width: 75%;" value="<?php echo isset($post_meta)?$post_meta:''; ?>" />
+					</p></td>
+				</tr>
+				<tr>
+					<td style="width: 50%;">
+						<p>
+							<?php $post_meta = get_post_meta($post->ID, 'optinoid_arrow_color', true); ?>
+							<label for="optin_arrow_color"><strong>Arrow Color</strong> <em>(if applicable)</em></label><br />
+							<input type="text" name="optinoid_arrow_color" id="optin_arrow_color" style="width: 75%;" value="<?php echo isset($post_meta)?$post_meta:''; ?>" />
+						</p>	
+					</td>
+					<td>&nbsp;</td>
 				</tr>
 				<tr>
 					<td style="width: 50%;">

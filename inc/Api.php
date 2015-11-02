@@ -147,8 +147,14 @@ class Optinoid_Api {
 		// do action before render to be able to manage css classes
 		do_action( 'optinoid_before_render' );
 		
+		$button_color = get_post_meta($optin->ID, 'optinoid_button_color', true);
+		$button_text_color = get_post_meta($optin->ID, 'optinoid_button_text_color', true);
+		$bg_color = get_post_meta($optin->ID, 'optinoid_bg_color', true);
+		$arrow_color = get_post_meta($optin->ID, 'optinoid_arrow_color', true);
+		$text_color = get_post_meta($optin->ID, 'optinoid_text_color', true);
+		
 		?>
-		<div class="<?php echo implode(' ', $this->args['class']); ?>" data-delay="<?php echo $optin_delay; ?>" data-ID="<?php echo $optin->ID; ?>" data-type="<?php echo $optin_type; ?>">
+		<div class="<?php echo implode(' ', $this->args['class']); ?>" data-delay="<?php echo $optin_delay; ?>" data-ID="<?php echo $optin->ID; ?>" data-type="<?php echo $optin_type; ?>" data-text-color="<?php echo $text_color; ?>" data-btn-color="<?php echo $button_color; ?>" data-btn-text-color="<?php echo $button_text_color; ?>" data-arrow-color="<?php echo $arrow_color; ?>" data-bg-color="<?php echo $bg_color; ?>">
 		<?php
 		
 		// check if theme has template to over-ride plugin
