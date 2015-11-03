@@ -230,6 +230,7 @@ var Optinoid = {
 			
 			if(style.arrowColor != '') {
 				j('.optinoid-scroll > i', j(el)).css('background', style.arrowColor);
+				j('.optinoid-scroll', j(el)).css('border-color', style.arrowColor);
 			}
 		});
 		

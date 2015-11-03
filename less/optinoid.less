@@ -333,22 +333,24 @@
 		border: 1px solid #DDD;
 	}
 	.optinoid-scroll {
-		width: 30px;
-		height: 50px;
+		width: 40px;
+		height: 40px;
 		position: absolute;
 		left: 50%;
-		right: 50%;
+		margin-left: -20px;
 		bottom: 40px;
 		cursor: pointer;
 		.animation(bouncing, 1s, linear, infinite);
+		border: 3px solid #666;
+		.rounded(30px);
 		&.split-screen {
 			left: 75%;
 		}
 		i {
 			content: "";
-			width: 2px;
-			height: 20px;
-			bottom: 0;
+			width: 3px;
+			height: 10px;
+			bottom: 35%;
 			position: absolute;
 			background: #666;
 			.rounded(5px);

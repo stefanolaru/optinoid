@@ -52,6 +52,8 @@ var OptinoidAdmin = {
 		// load lists on change
 	},
 	getLists: function(integration) {
+	
+		var selected_list = j('#list-select input[type=hidden]').val();
 		
 		j('#list-select select').addClass('hidden');
 		j('#list-select input[type=hidden]').val('');
@@ -82,7 +84,7 @@ var OptinoidAdmin = {
 					j('#list-select label').html('<strong>Select list</strong>');
 					
 					// preselect default
-					j('#list-select select').val(j('#list-select input[type=hidden]').val());
+					j('#list-select select').val(selected_list);
 					
 				}
 
