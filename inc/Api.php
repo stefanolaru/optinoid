@@ -440,13 +440,16 @@ class Optinoid_Api {
 				}
 			}
 			
+			// contact add
 			$client->query('ContactService.add', $options['infusionsoft_api'], array(
 				'FirstName' => $first_name,
 				'LastName' => $last_name,
 				'Email' => $email
 			));
 			
-			$response = $client->getResponse();
+			// optin email
+			$client->query('APIEmailService.optIn', $options['infusionsoft_api'], $email, 'Optinoid API Opt In');
+			
 		
 	}
 	
