@@ -584,9 +584,12 @@ class Optinoid_Admin {
 		// Initialize the client
 		$client = new WP_HTTP_IXR_Client( 'https://'.$options['infusionsoft_subdomain'].'.infusionsoft.com/api/xmlrpc' );
 		
-		$client->query('WebFormService.getMap', $options['infusionsoft_api']);
 		
+		
+		$client->query('WebFormService.getMap', $options['infusionsoft_api']);
+
 		$response = $client->getResponse();
+		
 		
 		// empty list array
 		$lists = array();

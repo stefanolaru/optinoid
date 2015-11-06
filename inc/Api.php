@@ -436,21 +436,41 @@ class Optinoid_Api {
 					$first_name = $name_arr[0];
 				}
 				if(!empty($name_arr[1])) {
-					$first_name = $name_arr[1];
+					$last_name = $name_arr[1];
 				}
 			}
 			
-			// contact add
-			$client->query('ContactService.add', $options['infusionsoft_api'], array(
-				'FirstName' => $first_name,
-				'LastName' => $last_name,
-				'Email' => $email
+			$client->query('WebFormService.getHTML', $options['infusionsoft_api'], $list_id);
+			
+			$dom = new DOMDocument();
+			$dom->loadHTML($client->getResponse());
+			
+			$inputs = $dom->getelementsbytagname('input');
+			
+			$data = array();
+			foreach($inputs as $input) {
+				$name = $input->getAttribute('name');
+				
+				if($name == 'inf_field_Email') {
+					$data[$name] = $email;
+				} elseif ($name == 'inf_field_FirstName') {
+					$data[$name] = $first_name;
+				} elseif ($name == 'inf_field_LastName') {
+					$data[$name] = $last_name;
+				} else {
+					$data[$name] = $input->getAttribute('value');
+				}
+			}
+			
+			
+			
+			$endpoint = 'https://'.$options['infusionsoft_subdomain'].'.infusionsoft.com/app/form/process/'.$data['inf_form_xid'];
+			
+			
+			$response = wp_remote_post($endpoint, array(
+				'body' => $data
 			));
 			
-			// optin email
-			$client->query('APIEmailService.optIn', $options['infusionsoft_api'], $email, 'Optinoid API Opt In');
-			
-		
 	}
 	
 	public function campaignmonitor_subscribe($list_id, $email, $name = null) {
