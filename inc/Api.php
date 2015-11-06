@@ -433,10 +433,10 @@ class Optinoid_Api {
 			if(!empty($name)) {
 				$name_arr = explode(' ', $name);
 				if(!empty($name_arr[0])) {
-					$first_naem = $name_arr[0];
+					$first_name = $name_arr[0];
 				}
 				if(!empty($name_arr[1])) {
-					$first_naem = $name_arr[1];
+					$first_name = $name_arr[1];
 				}
 			}
 			
