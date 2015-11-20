@@ -725,9 +725,10 @@
   .optinoid-optin {
     left: 0;
     top: 0;
+    border: 0;
     margin-left: 0;
     width: 100%;
-    border: 0;
+    border: 0 !important;
   }
   .optinoid-optin.active {
     top: 0;
@@ -757,6 +758,29 @@
     right: 6px;
     top: 6px;
   }
+  .optinoid-optin.content-over-image {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+  }
+  .optinoid-optin.content-over-image .optinoid-container {
+    float: none;
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    padding: 0.9375rem;
+  }
+  .optinoid-optin.content-over-image form {
+    position: absolute;
+    padding: 0.9375rem;
+    left: 0;
+    bottom: 0;
+    right: 0;
+  }
   #optinoid-floating-bar {
     height: auto;
   }
@@ -771,5 +795,8 @@
   }
   #optinoid-floating-bar form.active {
     display: block;
+  }
+  .optinoid-scroll {
+    display: none !important;
   }
 }

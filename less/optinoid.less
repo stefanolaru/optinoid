@@ -509,7 +509,7 @@
 		border: 0;
 		margin-left: 0;
 		width: 100%;
-		border: 0;
+		border: 0 !important;
 		&.active {
 			top: 0;
 			.translate(0,0);
@@ -534,6 +534,29 @@
 			right: 6px;
 			top: 6px;
 		}
+		&.content-over-image {
+			position: absolute;
+			left: 0;
+			top: 0;
+			bottom: 0;
+			right: 0;
+			.optinoid-container {
+				float: none;
+				position: absolute;
+				left: 0;
+				top: 0;
+				right: 0;
+				bottom: 0;
+				padding: 0.9375rem;
+			}
+			form {
+				position: absolute;
+				padding: 0.9375rem;
+				left: 0;
+				bottom: 0;
+				right: 0;
+			}
+		}
 	}
 	#optinoid-floating-bar {
 		height: auto;
@@ -549,5 +572,8 @@
 				display: block;
 			}
 		}
+	}
+	.optinoid-scroll {
+		display: none !important;
 	}
 }

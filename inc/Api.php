@@ -501,9 +501,21 @@ class Optinoid_Api {
 		if(empty($_POST['id'])) {
 			wp_die();
 		}
+		
+		// check if optin exists
+		$optin = get_post($_POST['id']);
+		
+		// if doesn't exist die early
+		if(empty($optin->ID)) {
+			wp_die();
+		}
+		
+		$load_globally = get_post_meta($optin->ID, 'optinoid_load_globally', true);
 	
-		// set cookie
-		$this->update_cookie($_POST['id']);
+		// set cookie if it's loaded globally
+		if(!empty($load_globally)) {
+			$this->update_cookie($_POST['id']);
+		}
 		
 		wp_die();
 	}
