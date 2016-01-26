@@ -327,7 +327,7 @@ class Optinoid_Admin {
 						<p>
 							<?php $post_meta = get_post_meta($post->ID, 'optinoid_button_text', true); ?>
 							<label for="optin_button_text"><strong>Opt-in Button Text</strong></label><br />
-							<input type="text" name="optinoid_button_text" id="optin_button_text" style="width: 75%;" value="<?php echo isset($post_meta['optinoid_button_text'])?$post_meta['optinoid_button_text']:'Subscribe'; ?>" />
+							<input type="text" name="optinoid_button_text" id="optin_button_text" style="width: 75%;" value="<?php echo isset($post_meta)?$post_meta:'Subscribe'; ?>" />
 						</p>	
 					</td>
 					<td>
