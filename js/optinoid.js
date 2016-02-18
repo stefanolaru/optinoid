@@ -12,7 +12,7 @@ var Optinoid = {
 		var self = this;
 		
 		// check cookies
-		this.cookies = Cookies.getJSON('optinoid-closed-optins');
+//		this.cookies = Cookies.getJSON('optinoid-closed-optins');
 		
 		this.win = j(window);
 		
@@ -28,7 +28,8 @@ var Optinoid = {
 			security: optinoid.nonce,
 			mobile: this.isMobile,
 			inline: false,
-			closed: typeof(this.cookies)!=='undefined'?this.cookies:null
+			is_home: optinoid.is_home
+//			closed: typeof(this.cookies)!=='undefined'?this.cookies:null
 		}, function(response) {
 			
 			// replace placeholder
@@ -264,7 +265,7 @@ var Optinoid = {
 		
 		// set cookie to prevent this opening further
 		if(set_cookie) {
-			jQuery.post(optinoid.api_url, {id: j(this.el).data('id'), action: 'close_optinoid', security: optinoid.nonce});
+			jQuery.post(optinoid.api_url, {id: j(this.el).data('id'), action: 'close_optinoid', security: optinoid.nonce, is_home: optinoid.is_home});
 		}
 		
 	}

@@ -36,12 +36,14 @@ class Optinoid_Output {
 	public function add_script_vars() {
 			
 			$post_id = get_queried_object_id();
+			
 			?>
 			<script type="text/javascript">
 				var optinoid = {
 					id: '<?php echo get_queried_object_id(); ?>',
 					api_url: '<?php echo admin_url( 'admin-ajax.php' ); ?>',
-					nonce: '<?php echo wp_create_nonce( 'optinoid' ); ?>'
+					nonce: '<?php echo wp_create_nonce( 'optinoid' ); ?>',
+					is_home: <?php echo is_front_page()?1:0; ?>
 				};
 			</script>
 			<?php

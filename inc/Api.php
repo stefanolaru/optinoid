@@ -26,14 +26,26 @@ class Optinoid_Api {
 		
 		global $wpdb;
 		
-		if(empty($_POST['id'])) {
+		if(!isset($_POST['id'])) {
 			wp_die();
 		}
 		
 		
 		$post_id = $_POST['id'];
 		
-		$closed_optins = !empty($_POST['closed'])?$_POST['closed']:array();
+		// set closed optins array
+		$closed_optins = array();
+		
+		// check cookie
+		if(!empty($_COOKIE)) {
+			foreach ($_COOKIE as $key => $value) {
+				if(strpos($key, 'optinoid-optin-') !== false) {
+					$closed_optins[] = $value;
+				}
+			}
+		}
+		
+//		$closed_optins = !empty($_POST['closed'])?$_POST['closed']:array();
 		
 		// get optins that won't render inline
 		$optins = get_posts(array(
@@ -349,7 +361,7 @@ class Optinoid_Api {
 		
 		
 		// update cookie
-		$this->update_cookie($optin->ID);
+		$this->update_cookie($optin->ID, 365);
 		
 		$response = array('success' => true, 'redirect' => false);
 		
@@ -510,28 +522,18 @@ class Optinoid_Api {
 			wp_die();
 		}
 		
-		$load_globally = get_post_meta($optin->ID, 'optinoid_load_globally', true);
-	
 		// set cookie if it's loaded globally
-		if(!empty($load_globally)) {
-			$this->update_cookie($_POST['id']);
+		if(empty($_POST['is_home'])) {
+			$this->update_cookie($optin->ID);
 		}
 		
 		wp_die();
 	}
 	
-	public function update_cookie($id) {
-		
-		if(isset($_COOKIE['optinoid-closed-optins'])) {
-			$closed_optins = json_decode(stripslashes($_COOKIE['optinoid-closed-optins']), true);
-		}
-			
-		$closed_optins = !empty($closed_optins)?$closed_optins:array();
-		// add id to cookie array
-		$closed_optins[] = $id;
+	public function update_cookie($id, $days = 5) {
 		
 		// set cookie for 1 year
-		setcookie('optinoid-closed-optins', json_encode($closed_optins), time()+3600*24*365, COOKIEPATH, COOKIE_DOMAIN, false);
+		setcookie('optinoid-optin-'.$id, $id, time()+3600*24*$days, COOKIEPATH, COOKIE_DOMAIN, false);
 		
 	}
 	
