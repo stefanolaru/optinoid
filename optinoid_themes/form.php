@@ -37,3 +37,4 @@
 		</div>
 	</div>
 </form>
+<?php echo get_post_meta($optin->ID, 'optinoid_custom_code', true); ?>

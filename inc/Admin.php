@@ -367,6 +367,15 @@ class Optinoid_Admin {
 					</td>
 					<td>&nbsp;</td>
 				</tr>
+				<tr>
+					<td colspan="2">
+						<p>
+							<?php $post_meta = get_post_meta($post->ID, 'optinoid_custom_code', true); ?>
+							<label for="optin_custom_code"><strong>Opt-in Custom Code</strong></label><br />
+							<textarea name="optinoid_custom_code" id="optin_custom_code" rows="5" style="width: 75%;"><?php echo isset($post_meta)?$post_meta:''; ?></textarea>
+						</p>
+					</td>
+				</tr>
 			</table>
 			
 			<table style="width: 100%;" id="integrations-tab">
